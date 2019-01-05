@@ -1,3 +1,5 @@
+# hello
+
 mode = 2 # 1 is sunrise, 2 is sunset, 3 is in one min
 
 import takePicture as tp
@@ -72,7 +74,7 @@ shot_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 date_folder = "/tlPython/timelapse/images/" + shot_date
 
 makeFolders()
-endTime = tp.takePictures(numPics, shotDelay)
+tp.takePictures(numPics, shotDelay)
 tp.getPictures(image_location)
 msgL3 = "stopped shooting at " + now()
 tp.resizeImages(image_location, resize_location) # resize from a to b
