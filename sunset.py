@@ -100,12 +100,13 @@ def targetTime(a, b):  # a will be time in advance of the event to start shootin
         sunsetDelta = datetime.timedelta(hours = sunsetHour, minutes = sunsetMin)
         daylight = sunsetDelta - sunriseDelta
         daylightPlus = daylight + 30 
-        
+
+
         
 
     else:
         print "error, b needs to either be 1 for sunrise or 2 for sunset or 3 for test"
-        led.display0("ERROR")
+        oled.display0("ERROR")
     zeroHour = int(zeroTime[0:2])
     zeroMin = int(zeroTime[3:5])
     zeroDelta = datetime.timedelta(hours = zeroHour,minutes = zeroMin)
