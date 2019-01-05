@@ -101,7 +101,7 @@ def targetTime(a, b):  # a will be time in advance of the event to start shootin
         daylight = sunsetDelta - sunriseDelta
         daylightPlus = daylight + 30 
 
-      # test hello from vscode
+ 
 
 
         
