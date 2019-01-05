@@ -5,3 +5,5 @@ keys.py
 
 images*
 zzz_old*
+venv*
+.vscode*

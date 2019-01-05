@@ -15,10 +15,14 @@ numPics = 300
 shotDelay = 7 # time between shots in sec
 sunriseLeadTime = 20
 sunsetLeadTime = 10
+allDayLeadTime = 10 # this amount before sunrise and after sunset.
 if mode == 1:
     leadTime = sunriseLeadTime
 if mode == 2: 
     leadTime = sunsetLeadTime
+if mode == 4: 
+    leadTime = allDayLeadTime
+
 
 
 
@@ -55,8 +59,12 @@ def now():
     return n
 
 
-
-msg12 = sunset.targetTime(leadTime, mode) # this returns the first two lines of msg
+if mode < 4:
+    msg12 = sunset.targetTime(leadTime, mode) # this returns the first two lines of msg
+if mode == 4:
+    allDayRet = sunset.getAllDay(leadTime, numPics)
+    msg12 = allDayRet[0]
+    shotDelay = allDayRet[1]
 
 # moved the following to after the targetTime so the folders will have the correct date if i start it the night before
 shot_date = datetime.now().strftime("%Y-%m-%d")
@@ -86,25 +94,3 @@ f.close()
 
 oled.clear()
 
-
-
-# # msg = sunset.targetTime(leadTime, 2)
-
-# image_location = "/tlPython/timelapse/images/2018-10-24/1/ogs"
-# resize_location = "/tlPython/timelapse/images/2018-10-24/1/resized"
-
-
-# # makeFolders()
-# # tp.takePictures(numPics, shotDelay)
-# # 
-# tp.killgphoto2process()
-# tp.getPictures(image_location)
-# tp.resizeImages(image_location, resize_location) # resize from a to b
-# # 
-# movName = tp.makeVid(resize_location, shot_date) # where to find source images
-# tp.makeGif(resize_location, shot_date)
-# print "movName = " + str(movName)
-# # twitter.tweet("hello", movName)
-
-
-# # oled.clear()
