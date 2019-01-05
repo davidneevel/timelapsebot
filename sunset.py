@@ -86,8 +86,7 @@ def wait(targetTime):
 
 def getAllDay(offset, numPics):
     
-    # offset = 90 # half the offset is before sunrise, half after
-    offsetDelta = datetime.timedelta(minutes = (offset/2))
+    offsetDelta = datetime.timedelta(minutes = (offset))
     print offsetDelta
     sunriseTime = getSunriseTime()
     sunriseHour = int(sunriseTime[0:2])
@@ -105,7 +104,7 @@ def getAllDay(offset, numPics):
     print "daylightPlus = ", daylightPlus
     interval = int(round(daylightPlus/numPics))
     print "interval = ", interval
-    targetTime = sunriseDelta - offsetDelta
+    targetTime = sunriseDelta - offsetDelta # sets target time to (offset) before sunrise
     print "targetTime =", targetTime
     wait(targetTime)
     msgL1 = "started shooting at " + str(targetTime)
