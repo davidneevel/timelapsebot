@@ -99,7 +99,8 @@ def targetTime(a, b):  # a will be time in advance of the event to start shootin
         sunriseDelta = datetime.timedelta(hours = sunriseHour, minutes = sunriseMin)
         sunsetDelta = datetime.timedelta(hours = sunsetHour, minutes = sunsetMin)
         daylight = sunsetDelta - sunriseDelta
-        daylightPlus = daylight + 30
+        daylightPlus = daylight + 30 
+        
         
 
     else:
