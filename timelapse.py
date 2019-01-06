@@ -22,6 +22,8 @@ if mode == 1:
     leadTime = sunriseLeadTime
 if mode == 2: 
     leadTime = sunsetLeadTime
+if mode == 3:
+    leadTime = 1  # don't need this except to avoid an error when calling sunset.targetTime
 if mode == 4: 
     leadTime = allDayLeadTime
 
