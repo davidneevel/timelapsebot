@@ -108,7 +108,7 @@ def getAllDay(offset, numPics):
     print "targetTime =", targetTime
     wait(targetTime)
     msgL1 = "started shooting at " + str(targetTime)
-    msgL2 = "sunrise was at " + str(zeroTime)
+    msgL2 = "sunrise was at " + str(sunriseTime)
     msgL12 = msgL1 + "\n" + msgL2
     return(msgL12, interval)
 
