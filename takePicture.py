@@ -8,7 +8,7 @@ from sh import gphoto2 as gp
 import signal, os, subprocess
 import shutil
 from PIL import Image
-print "importred takePicture"
+print "imported takePicture"
 import oled
 import os
 
